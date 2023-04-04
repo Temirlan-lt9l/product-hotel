@@ -1,0 +1,26 @@
+.catalog{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 1200px;
+    height: auto;
+}
+.conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    border: .5px solid gray;
+    border-radius: 8px;
+    margin: 10px 0 0 0;
+}

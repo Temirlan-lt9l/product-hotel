@@ -1,0 +1,26 @@
+.boxInput{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0 0;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.checkbox input {
+margin: 5px;
+}
+.checkbox div{
+    width: 100%;
+    margin: 5px;
+}
+.checkbox span{
+    margin: 5px;
+}

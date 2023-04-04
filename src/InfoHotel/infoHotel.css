@@ -1,0 +1,69 @@
+.colum{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.allPhotoGallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.mP{
+    width: 98%!important;
+    height: 600px !important;
+}
+.gP{
+    width: 15% !important;
+    height: 150px !important;
+    margin: 5px;
+}
+.searchColum{
+    width: 20%;
+    height: auto;
+}
+.descriptionHotel{
+    margin: 10px 0 0 0 ;
+}
+.copy{
+    width: 80%;
+}
+.h3Copy{
+    margin: 30px 0 30px 0;
+}
+.hundred{
+    width: 90%;
+}
+.he{
+    width: 100%;
+    height: 40px;
+}
+.linkHome{
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    height: auto;
+
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #f00d0d;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 

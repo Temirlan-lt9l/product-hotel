@@ -1,0 +1,185 @@
+h3{
+    font-size: 30px;
+    font-weight: 700;
+    color: blue;
+    cursor: pointer;
+}
+img{
+    width: 95%;
+    height: 95%;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+.boxPhoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 99%;
+    height: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    border: .5px solid gray;
+}
+.boxDescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+
+}
+.cityName{
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.about{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+.about div {
+    margin: 0 0 0 10px;
+}
+.description{
+    width: 90%;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+}
+.grade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 95%;
+    margin: 15px 5px 0 5px;
+    cursor: pointer;
+}
+.review{
+    margin: 0 5px 0 0;
+}
+
+.review h4{
+    font-size: 15px;
+    font-weight: 600;
+}
+.review p{
+    font-size: 10px;
+}
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: blue;
+    border-radius: 8px;
+}
+.price{
+    margin: 0 5px 15px 5px;
+    cursor: pointer;
+}
+
+.price span{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.price button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 48px;
+    padding: 4px 12px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.arrow{
+    font-size: 20px !important;
+}
+.show{
+    font-size: 13px !important;
+    font-weight: 400 !important;
+}
+
+.stars{
+    font-size: 18px !important;
+    margin: 0 !important;
+    color: red;
+    text-decoration: none !important;
+    outline: none !important;
+}
+.show2{
+    font-size: 8px !important;
+    font-weight: 400 !important;
+}
+
+.price2 button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 30px;
+    padding: 4px 12px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    width: 99%;
+    height: 200px;
+    margin: 5px;
+    border-radius: 8px;
+    border: .5px solid gray;
+}
+.boxPhoto2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+}
+.boxDescription2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 1200px;
+}
+.fondSizeh4{
+    font-size: 12px;
+}

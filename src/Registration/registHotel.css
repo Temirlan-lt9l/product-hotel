@@ -1,0 +1,79 @@
+.reg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid gray;
+    margin: 100px 0 0 0;
+    padding: 10px 0 10px 0;
+}
+.formInput{
+    width: 70%;
+    height: 40px;
+    padding: 0 0 0 10px;
+    margin: 5px 0 10px 0;
+    border: .5px solid rgb(66, 66, 241);
+    outline: none;
+}
+.photoBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.linkImg{
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.addPhoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.servicesGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 10px;
+}
+.servicesBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.photoGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+.upload{
+    margin: 0 !important;
+}
+.icon{
+    font-size: 20px;
+    margin: 0 0 10px 0  !important;
+}
+.servicesInput{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;    
+}
+.done{
+    width: 100px;
+    height: 30px;
+}
