@@ -15,7 +15,6 @@ function InfoHotel(props) {
     const getData = async()=>{
         const response = await axios.get(`http://cepbep.ddns.net:2500/api/hotelDB/hotels/getHotelById/${params.hotelId}`)
         setHotel(response.data)
-        console.log(response.data.info.services);
     }
 
     if(hotel) {

@@ -26,7 +26,7 @@
     height: auto;
 }
 .descriptionHotel{
-    margin: 10px 0 0 0 ;
+    margin: 10px 0 100px 0 ;
 }
 .copy{
     width: 80%;
@@ -61,6 +61,24 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
+  .servisesBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    border: 0.5px solid gray;
+  }
+.gridMini{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    width: 100%;
+    margin: 30px 0 0 0;
+
+}
   
   @keyframes rotation {
     0% {

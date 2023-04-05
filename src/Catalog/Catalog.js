@@ -21,7 +21,7 @@ function Catalog(props) {
                 <Filter/>
             </div>
             <div className="conteiner">
-              {hotel.map((obj) =><HotelCard key={obj._id} _id={obj._id} star={obj.stars} total={obj.rating} price="60 000" name={obj.name} cityName={obj.city} description={obj.info.description} img={obj.info.mainPhoto}/>)}  
+              {hotel.map((obj) =><HotelCard key={obj._id} _id={obj._id} star={obj.stars} total={obj.rating}  name={obj.name} cityName={obj.city} description={obj.info.description} img={obj.info.mainPhoto}/>)}  
             </div>
         </div>
     )

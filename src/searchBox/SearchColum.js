@@ -38,6 +38,8 @@ function SearchColum(props) {
         localStorage.setItem("city", city)
     }
 
+    useEffect(()=>{showHotel()},[])
+
     
     return(       
         <form className="colum">
