@@ -69,7 +69,7 @@ function RegistrationHotel(props) {
                 <div className="photoBox">
                     <input type="text" className="formInput" placeholder="Ссылка на сновную фотографию " name="mainPhoto" value={mainPhoto} onChange={(e) => setMainPhoto(e.target.value)}/>
                     <div>
-                        <img src={mainPhoto} className="linkImg"/>
+                        {mainPhoto && <img src={mainPhoto} className="linkImg"/>}
                     </div>
                 </div>
                 <div className="photoBox">

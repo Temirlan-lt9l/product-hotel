@@ -10,7 +10,7 @@ function Catalog(props) {
     useEffect(()=>{
         Store.subscribe(()=>{
             const data = Store.getState()
-            setHotel(data.hotelValue)
+                setHotel(data.hotelValue)
         })
     },[])
     

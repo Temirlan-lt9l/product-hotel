@@ -2,7 +2,6 @@ function ActionCreate(value) {
     return{
         type: "hotel",
         value: value,
-        
     }
 }
 

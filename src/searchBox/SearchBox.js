@@ -27,11 +27,12 @@ function SearchBox(props) {
                     "Content-Type":"application/json"                
             }
         })
-        console.log(response.data);
         Store.dispatch(ActionCreate(response.data))
+
     }
     const showHotel = (e) =>{
         getData()
+        localStorage.setItem("city", city)
     }
 
     useEffect(()=>{getData()}, [])
@@ -57,7 +58,7 @@ function SearchBox(props) {
                             />}
                     </div>
                 </div>
-                <Link className="inputbox newA" to="pageCatalog">
+                <Link className="inputbox newA" to="/pageCatalog">
                     <div className="inputbox three">
                     <input className="submit" type="submit" value="НАЙТИ" onClick={showHotel}/>
                     </div>

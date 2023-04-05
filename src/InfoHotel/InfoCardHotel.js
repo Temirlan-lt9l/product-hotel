@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import SearchColum from "../searchBox/SearchColum.js";
 
 function InfoCardHotel(props) {
-    
+   
+
     return(
-        <div className="catalog">
+        <div className="catalog m0">
             <div className="colum">
-                <div><h3 className="h3Copy">{props.name}</h3></div>          
+                <div><h3 className="h3copy">{props.name}</h3></div>          
                 <div className="catalog">
                     <div className="searchColum">
                         <SearchColum/>
@@ -15,11 +16,11 @@ function InfoCardHotel(props) {
                         <div className="allPhotoGallery">
                             <img className="mP" src={props.mainPhoto}/>
                         </div>
-                        <div>
-                            {/* {props.services.map((obj)=><div>{obj}</div>)} */}
-                        </div>
                         <div className="allPhotoGallery">
                            {props.gPhoto.map((obj)=><img className="gP" key={Math.random()} src={obj}/>)}
+                        </div>
+                         <div>
+                            {props.services.map((obj)=><div key={Math.random()} >{obj[0]}</div>)}
                         </div>
                     </div>
                 </div>

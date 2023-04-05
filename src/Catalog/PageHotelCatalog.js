@@ -1,6 +1,7 @@
 import React from "react";
 import Catalog from "./Catalog.js";
 import Header from "../header/Header.js";
+import Footer from "../header/Footer.js";
 
 function PageHotelCatalog(props) {
     
@@ -9,6 +10,7 @@ function PageHotelCatalog(props) {
         <div className="wrapper">
             <Header/>
             <Catalog/>
+            <Footer/>
         </div>
     )
 }

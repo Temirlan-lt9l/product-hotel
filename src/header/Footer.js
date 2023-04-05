@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./headerStylr.css";
 
-function Header(props) {
+function Footer(props) {
     
     return(
         <header>
@@ -11,10 +11,10 @@ function Header(props) {
             </div>
             <div className="acc">
                 <Link to="/registrationHotel" ><input type="submit" value="Зарегистрировать Отель" className="login"/></Link>
-                <Link to="/registrationUser"><input type="submit" value="Войти в аккаутн" className="login"/></Link>
+                <Link to="/"><input type="submit" value="Войти в аккаутн" className="login"/></Link>
             </div>
         </header>
     )
 }
 
-export default Header;
+export default Footer;

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./header/Header.js";
+import Footer from "./header/Footer.js";
 
 
 function NotFound(props) {
@@ -8,6 +9,7 @@ function NotFound(props) {
         <div className="wrapper">
             <Header/>
             404
+            <Footer/>
         </div>
     )
     

@@ -56,7 +56,7 @@ function HotelCard(props) {
         <div className="boxDescription">
             <div className="about">
                 <div>
-               <Link to={props._id}> <h3>{props.name}</h3> <div>{star(stars)}</div></Link>
+               <Link to={`/${props._id}`}> <h3>{props.name}</h3> <div>{star(stars)}</div></Link>
                <p className="cityName">{props.cityName}</p>
                 </div>
                 <p className="description">
@@ -73,7 +73,7 @@ function HotelCard(props) {
                 </div>
                 <div className="price">
                     <span>{props.price}</span>
-                   <Link to={props._id}>
+                   <Link to={`/${props._id}`}>
                         <button>
                             <span className="show">Show apartmen</span>
                             <span className="material-symbols-outlined arrow">chevron_right</span>

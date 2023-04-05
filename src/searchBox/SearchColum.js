@@ -12,7 +12,7 @@ import { DateRange } from 'react-date-range';
 
 
 function SearchColum(props) {
-    const [city, setCity] = useState('');
+    const [city, setCity] = useState(localStorage.getItem("city"));
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState([
     {
@@ -31,6 +31,11 @@ function SearchColum(props) {
             }
         })
         Store.dispatch(ActionCreate(response.data))
+    }
+
+    const showHotel = () =>{
+        getData()
+        localStorage.setItem("city", city)
     }
 
     
@@ -54,7 +59,7 @@ function SearchColum(props) {
                     </div>
             </div>
             <div className="inputbox three hundred">
-               <Link to="pageCatalog" className="linkHome"><input className="submit he" type="submit" value="НАЙТИ" onClick={getData}/></Link>
+               <Link to="/pageCatalog" className="linkHome"><input className="submit he" type="submit" value="НАЙТИ" onClick={showHotel}/></Link>
             </div>
         </form>
     )
