@@ -1,19 +1,23 @@
-import React from "react";
+import React , {useState}from "react";
 import { Link } from "react-router-dom";
 import "./headerStylr.css";
 
 function Footer(props) {
+    const [value, setValue] = useState('')
     
     return(
-        <header>
+        <footer>
             <div className="logo">
                <Link to='/'><span className="material-symbols-outlined apartment">apartment</span></Link>  
             </div>
-            <div className="acc">
-                <Link to="/registrationHotel" ><input type="submit" value="Зарегистрировать Отель" className="login"/></Link>
-                <Link to="/"><input type="submit" value="Войти в аккаутн" className="login"/></Link>
+            <div className="mailBox">
+                <h2 className="h2Mail">Сэкономьте время и деньги!</h2>
+                <div className="mail">
+                    <input className="inputMail" type="text" placeholder="Ваш электронный адрес" value={value} onChange={(e)=>setValue(e.target.value)}/>
+                    <button className="btnMail">Подписаться</button>
+                </div>
             </div>
-        </header>
+        </footer>
     )
 }
 

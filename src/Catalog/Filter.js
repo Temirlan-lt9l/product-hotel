@@ -11,20 +11,17 @@ function Filter(props) {
 
 
     const filter = async () => {
-        const params =  {
+        const filter =  {
             stars: parseInt(valueStar) ,
             services:valueServices,
             price:parseInt(valuePrice),
           }
-        const response = await axios.get(`http://cepbep.ddns.net:2500/api/hotelDB/hotels/getHotels`, {
-        params: {
-          stars: parseInt(valueStar) ,
-          services:valueServices,
-          price:parseInt(valuePrice),
+        const response = await axios.post(`http://cepbep.ddns.net:2500/api/hotelDB/hotels/postHotelFilter`, {
+        filter: {
+          stars: parseInt(valueStar)
         }
       })
-      console.log(valuePrice,valueServices,valueStar);
-        console.log(params);
+      console.log(filter);
         console.log(response.data);
       Store.dispatch(ActionCreate(response.data))
     }

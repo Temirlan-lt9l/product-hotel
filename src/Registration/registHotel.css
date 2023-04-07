@@ -30,6 +30,7 @@
     height: 60px;
     border-radius: 8px;
     margin-bottom: 10px;
+    cursor:default;
 }
 .addPhoto{
     display: flex;
@@ -76,4 +77,29 @@
 .done{
     width: 100px;
     height: 30px;
+}
+.greenOk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(30, 238, 30);
+    color: #fff;
+}
+.fix{
+    position: relative;
+}
+.absolute{
+    font-size: 16px !important;
+    position: absolute;
+    bottom: 16px;
+    right: 2px;
+    color: #fff !important;
+    background-color: black !important;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 2;
 }

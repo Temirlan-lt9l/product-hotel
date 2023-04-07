@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ServicesBox from "./ServicesBox.js";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -6,16 +6,19 @@ import "./registHotel.css"
 
 
 function RegistrationHotel(props) {
-    const [name, setName] = useState('')
-    const [country,setCountry] = useState('')
-    const [city, setCity] = useState('')
-    const [stars, setStars] = useState('')
-    const [description, setDescription] = useState('')
-    const [mainPhoto, setMainPhoto] = useState('')
-    const [sendPhoto, setPhoto] = useState('')
-    const [photoAlbum, setPhotoAlbum] = useState([])
-    const [services, setServices] = useState([])
-    const [price,setPrice] = useState('') 
+    const [name, setName] = useState('');
+    const [country,setCountry] = useState('');
+    const [city, setCity] = useState('');
+    const [stars, setStars] = useState('');
+    const [description, setDescription] = useState('');
+    const [mainPhoto, setMainPhoto] = useState('');
+    const [sendPhoto, setPhoto] = useState('');
+    const [photoAlbum, setPhotoAlbum] = useState([]);
+    const [allServices, setAllServises] = useState([]);
+    const [services, setServices] = useState('');
+    const [price,setPrice] = useState(''); 
+    const[ok, setOk] = useState('');
+
 
     const postData = async ()=>{
         const data = {
@@ -25,7 +28,7 @@ function RegistrationHotel(props) {
             "stars": parseInt(stars),
             "mainPhoto": mainPhoto,
             "description": description,
-            "services": services,
+            "services": allServices,
             "photoAlbum": photoAlbum
           }
 
@@ -34,20 +37,26 @@ function RegistrationHotel(props) {
             "Content-Type": "application/json"
             }
             })
-            console.log(response.data); 
+            setOk(response.data)
     }
     const submitForm = async (e)=> {
         e.preventDefault()
         postData()
       }
-      const addPhotoByLink = (e) =>{
-        e.preventDefault()
-        setPhotoAlbum(prev => {
-            return[...prev, sendPhoto];
-        });
+      const addPhotoByLink =  () =>{
+        setPhotoAlbum([...photoAlbum, sendPhoto]);
         setPhoto('')
       }
-    
+
+      const deletePhote = (index)=>{
+        setPhotoAlbum(photoAlbum.filter((_,i)=> i != index))
+      }
+
+
+      useEffect(()=>setAllServises(prev => {
+        return[...prev, services];
+    }),[services])
+
     return(
         <div className="wrapper">
             <header>
@@ -55,7 +64,8 @@ function RegistrationHotel(props) {
                <Link to='/'><span className="material-symbols-outlined apartment">apartment</span></Link>  
             </div>
             <div className="acc">
-                <Link to="/"><input type="submit" value="Войти в аккаутн" className="login"/></Link>
+                <Link to="/registrationUser"><input type="submit" value="Регистрация" className="login"/></Link>
+                <Link to="/login"><input type="submit" value="Войти в аккаутн" className="login"/></Link>
             </div>
             </header>
             <div className="catalog">
@@ -75,30 +85,33 @@ function RegistrationHotel(props) {
                 <div className="photoBox">
                     <input type="text" className="formInput" placeholder="Дополнительные фотографии" name="photoAlbum" value={sendPhoto} onChange={(e) => setPhoto(e.target.value)}/>
                     <div className="photoGrid"> 
-                    {photoAlbum.length > 0 && photoAlbum.map(link => (
-                        <img key={Math.random()} src={link} className="linkImg"/>
+                    {photoAlbum.length > 0 && photoAlbum.map((link,i) => (
+                        <div  key={i} className="fix">
+                            <img key={Math.random()} src={link} className="linkImg"/>
+                            <span className="material-symbols-outlined absolute" onClick={()=>{deletePhote(i)}}>delete</span>
+                        </div>
                     ))}
                     <div className="addPhoto">
-                        <span className="material-symbols-outlined upload" onClick={addPhotoByLink}>upload</span>
+                        <span className="material-symbols-outlined upload" onClick={()=>{addPhotoByLink()}}>upload</span>
                     </div>
                     </div>
                 </div>
                 <div className="photoBox">
                     <h4>Услуги</h4>
                     <div className="servicesGrid">
-                       <ServicesBox value="wifi" text="wifi" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="BAR" text="local_bar"  onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="TV" text="tv" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="Pool" text="pool" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="transfer" text="move_up" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="balcony" text="balcony" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="elevator" text="elevator" onChange={(e) => setServices(e.target.value)}/>
-                       <ServicesBox value="Laundry" text="local_laundry_service" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Wifi"  text="wifi" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="BAR"  text="local_bar"  onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="TV"   text="tv" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Pool"   text="pool" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Transfer"  text="move_up" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Balcony"  text="balcony" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Elevator"   text="elevator" onChange={(e) => setServices(e.target.value)}/>
+                       <ServicesBox value="Laundry"   text="local_laundry_service" onChange={(e) => setServices(e.target.value)}/>
                     </div>
-                    <input type="text" className="formInput" placeholder="Услуги" name="services" value={services}  onChange={(e) => setServices(e.target.value)}/>
                 </div>
                 <input type="number" className="formInput" placeholder="Цена за номер" name="services" value={price}  onChange={(e) => setPrice(e.target.value)}/>
                 <input type="submit" className="submit done" value="Submit" onClick={(e)=>submitForm(e)}/>
+                {ok && <div className="greenOk"> <p>Регистрация завершена</p> </div> }
                 </form>
             </div>
         </div>

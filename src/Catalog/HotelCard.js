@@ -1,6 +1,8 @@
 import React  from "react";
 import { Link } from "react-router-dom";
 import "./hotel.css";
+import NotImg from "./hotel.png"
+
 
 
 function HotelCard(props) {
@@ -51,7 +53,7 @@ function HotelCard(props) {
     return(
     <div className="box">
         <div className="boxPhoto">
-            <img src={props.img}/>
+        {props.img.slice(0,5) =="https" ? <img src={props.img}/> : <img src={NotImg}/>} 
         </div>
         <div className="boxDescription">
             <div className="about">
